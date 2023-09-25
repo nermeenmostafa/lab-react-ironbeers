@@ -87,40 +87,49 @@
 }
 
 
+
 label {
-  font-size: 17px;
-  padding: 12px 12px 12px 0;
-  display: inline-block;
+ padding:3px 3px 3px 3px;
+ display: inline-block;
+
 }
+
+
+
 
 input[type=text] {
   width: 100%;
   padding: 12px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
+  border: 2px solid #cccccc;
+  border-radius: 6px;
   resize: vertical;
-  
+
 
 }
 
 
 
 input[type=submit] {
-  width: 50%;
+  width: 109%;
   background-color: #3DC4FC;
   color: white;
   padding: 12px 20px;
- border: none;
+  border: none;
   border-radius: 4px;
-float: left;
 
-  
 }
 
 input[type=submit]:hover {
   background-color: #06a8ee;
+
 }
+
 .col-25 {
-  width: 50%;
- 
+  width: 25%;
+
+}
+
+.col-7 {
+  width: 25%;
+
 }

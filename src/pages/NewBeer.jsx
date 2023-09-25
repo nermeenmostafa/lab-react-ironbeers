@@ -24,7 +24,7 @@ function NewBeer() {
             attenuation_level: attenuationLevel,
             contributed_by: contributedby
         }
-        axios.post('https://ih-beers-api2.herokuapp.com/beers', newBeer)
+        axios.post('https://ih-beers-api2.herokuapp.com/beers/new', newBeer)
             .then((response) => {
                 setName("")
                 setTagline("")
@@ -34,10 +34,10 @@ function NewBeer() {
                 setAttenuationLevel(0)
                 setContributedby("")
                 alert("New Beer Created")
-                navigate('/')
+                navigate('/Beers')
             })
             .catch(err => {
-                navigate("/error")
+                console.log(err)
             })
 
     }
@@ -48,45 +48,46 @@ function NewBeer() {
             <div className="NewBeer">
                 <h3>Add New Beer</h3>
                 <form onSubmit={handleSubmit}>
-                <label>
-                Name of Beer:
-                <input type="text" value={name} onChange={(e)=>{setName(e.target.value)}} />
-            </label>
-            <br/>
-            <label>
-            Tagline:
-                <input type="text" value={tagline} onChange={(e)=>{setTagline(e.target.value)}} />
-            </label>
-            <br/>
-            <label className='col-25'>
-            Description:
-                <input type="text" value={description} onChange={(e)=>{setDescription(e.target.value)}} />
-            </label>
-            <br/>
-            <label>
-            First Brewed:
-                <input type="text" value={firstBrewed} onChange={(e)=>{setFirstBrewed(e.target.value)}} />
-            </label>
-            <br/>
-            <label>
-            Brewers Tips:
-                <input type="text" value={brewersTips} onChange={(e)=>{setBrewersTips(e.target.value)}} />
-            </label>
-            <br/>
-            <label>
-            Attenuation level: 
-                <input type="number" value={attenuationLevel} onChange={(e)=>{setAttenuationLevel(e.target.value)}} />
-            </label>
-            <br/>
-            <label>
-            Contributed by: 
-                <input type="text" value={contributedby} onChange={(e)=>{setContributedby(e.target.value)}} />
-                <br/>
-                <input type="submit" value="Submit"/>
-            </label>
+                    <label className='col-7'>
+                        Name of Beer:
+                        <input type="text" value={name} onChange={(e) => { setName(e.target.value) }} />
+                    </label>
+                    <br />
+                    <label className='col-7'>
+                        Tagline:
+                        <input type="text" value={tagline} onChange={(e) => { setTagline(e.target.value) }} />
+                    </label>
+                    <br />
+                    <label className='col-25'>
+                        Description:
+                        <input type="text" value={description} onChange={(e) => { setDescription(e.target.value) }} />
+                    </label>
+                    <br />
+                    <label className='col-7'>
+                        First Brewed:
+                        <input type="text" value={firstBrewed} onChange={(e) => { setFirstBrewed(e.target.value) }} />
+                    </label>
+                    <br />
+                    <label className='col-7'>
+                        Brewers Tips:
+                        <input type="text" value={brewersTips} onChange={(e) => { setBrewersTips(e.target.value) }} />
+                    </label>
+                    <br />
+                    <label>
+                        Attenuation level:
+                        <input type="number" value={attenuationLevel} onChange={(e) => { setAttenuationLevel(e.target.value) }} />
+                    </label>
+                    <br />
+                    <label className='col-7'>
+                        Contributed by:
+                        <input type="text" value={contributedby} onChange={(e) => { setContributedby(e.target.value) }} />
+                        <br />
+                        <input type="submit" value="Add New" />
+                    </label>
                 </form>
-                </div>
             </div>
-            )
+
+        </div>
+    )
 }
-            export default NewBeer;
+export default NewBeer;
